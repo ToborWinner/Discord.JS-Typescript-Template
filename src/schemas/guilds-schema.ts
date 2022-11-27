@@ -6,16 +6,6 @@ const reqString = {
     required: true
 }
 
-const reqNumber = {
-    type: Number,
-    required: true
-}
-
-const Count = new Schema({
-    id: reqString,
-    count: reqNumber
-})
-
 const schema = new Schema({
     guildId: reqString,
     prefix: String,
