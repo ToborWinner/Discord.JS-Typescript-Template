@@ -5,6 +5,7 @@ import { sendError } from "./utils/sendError";
 import { Button, ButtonIdType } from "./interfaces/Button";
 import { PingBtn } from "./buttons/debug/pingbtn";
 import { ReturnBtn } from "./buttons/debug/returnmsg";
+import { ModalBtn } from "./buttons/debug/modalbtn";
 
 export default class ButtonManager {
     public app: DiscordBot
@@ -13,7 +14,7 @@ export default class ButtonManager {
     constructor(app: DiscordBot) {
         this.app = app
         this.client = app.client
-        this.buttons = [PingBtn, ReturnBtn]
+        this.buttons = [PingBtn, ReturnBtn, ModalBtn]
     }
     public async handleButton(interaction: ButtonInteraction): Promise<void>  {
         //TODO: permissions
@@ -33,7 +34,7 @@ export default class ButtonManager {
         }
         if (button.botOwnerOnly && !this.app.botOwners.includes(interaction.user.id)) {
             this.app.log.info(`Someone attempted to use a botOwners only button.  Button id: ${interaction.customId}; Guild ID: ${interaction.guildId}; User: ${interaction.user.username}#${interaction.user.discriminator} (${interaction.user.id}).`)
-            await sendError(interaction, "You don't have the required permission to run this command.", true)
+            await sendError(interaction, "You don't have the required permission to run this button.", true)
             return
         }
         if (button.guildOnly && !interaction.inGuild()) {
@@ -43,10 +44,10 @@ export default class ButtonManager {
             return
         }
         if (button.guildOwnerOnly && interaction.inGuild() && interaction.user.id != interaction.guild?.ownerId) {
-            await sendError(interaction, "You don't have the required permission to run this command.")
+            await sendError(interaction, "You don't have the required permission to run this button.")
             return
         } else if (button.guildOwnerOnly && !interaction.inGuild()) {
-            await sendError(interaction, "This command can only be ran in guilds.")
+            await sendError(interaction, "This button can only be ran in guilds.")
             return
         }
         try {

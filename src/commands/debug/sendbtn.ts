@@ -23,6 +23,11 @@ export const SendBtn: Command = {
                             label: "Return Button",
                             type: ComponentType.Button,
                             style: ButtonStyle.Secondary
+                        },{
+                            customId: "modalbtn",
+                            label: "Test Modal",
+                            type: ComponentType.Button,
+                            style: ButtonStyle.Secondary
                         }]
                     }
                 ]

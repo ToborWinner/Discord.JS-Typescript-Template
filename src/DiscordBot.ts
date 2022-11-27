@@ -5,6 +5,7 @@ import CommandManager from "./CommandManager";
 import interactionCreate from "./listeners/interactionCreate";
 import messageCreate from "./listeners/messageCreate";
 import ready from "./listeners/ready";
+import ModalManager from "./ModalManager";
 import BotClient from "./utils/BotClient";
 import Logger from "./utils/Logger";
 import PermissionManager from "./utils/PermissionManager";
@@ -16,6 +17,7 @@ export class DiscordBot {
     public botOwners: string[]
     public commandManager: CommandManager
     public buttonManager: ButtonManager
+    public modalManager: ModalManager
     public permissionManager: PermissionManager
     public footer: EmbedFooterOptions
     constructor() {
@@ -49,6 +51,7 @@ export class DiscordBot {
         this.log.debug("Initializing managers...")
         this.commandManager = new CommandManager(this)
         this.buttonManager = new ButtonManager(this)
+        this.modalManager = new ModalManager(this)
         this.permissionManager = new PermissionManager(this)
         this.log.debug("Initializing discord.js listeners...")
         ready(this.client)

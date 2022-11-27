@@ -19,6 +19,12 @@ export default (client: BotClient): void => {
             } catch (e) {
                 client.app.log.error("Error during execution of button.", e)
             }
+        } else if (interaction.isModalSubmit()) {
+            try {
+                await client.app.modalManager.handleModal(interaction)
+            } catch (e) {
+                client.app.log.error("Error during execution of modal.", e)
+            }
         }
     });
 };
