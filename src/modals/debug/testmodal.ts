@@ -1,6 +1,6 @@
 import { Modal, ModalIdType } from "../../interfaces/Modal";
 
-export const TestModal: Modal = {
+const TestModal: Modal = {
     botOwnerOnly: true,
     customId: "testmodal",
     type: ModalIdType.Fixed,
@@ -13,3 +13,4 @@ export const TestModal: Modal = {
         }
     }
 };
+export default TestModal

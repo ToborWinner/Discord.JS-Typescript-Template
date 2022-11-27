@@ -1,6 +1,6 @@
 import { Button, ButtonIdType } from "../../interfaces/Button";
 
-export const PingBtn: Button = {
+const PingBtn: Button = {
     botOwnerOnly: true,
     customId: "ping",
     type: ButtonIdType.Fixed,
@@ -18,3 +18,4 @@ export const PingBtn: Button = {
         }
     }
 };
+export default PingBtn

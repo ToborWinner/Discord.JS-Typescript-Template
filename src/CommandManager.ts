@@ -1,10 +1,9 @@
 import { ChatInputCommandInteraction, Message } from "discord.js";
 import { Command, CommandType } from "./interfaces/Command";
 import { DiscordBot } from "./DiscordBot";
-import { Ping } from "./commands/debug/ping";
 import BotClient from "./utils/BotClient";
 import { sendError } from "./utils/sendError";
-import { SendBtn } from "./commands/debug/sendbtn";
+import { getObjects, ObjectImportType } from "./utils/getFiles";
 
 export default class CommandManager {
     public app: DiscordBot
@@ -13,7 +12,7 @@ export default class CommandManager {
     constructor(app: DiscordBot) {
         this.app = app
         this.client = app.client
-        this.commands = [Ping, SendBtn]
+        this.commands = getObjects(ObjectImportType.Command) as Command[]
     }
     public async handleSlashCommand(interaction: ChatInputCommandInteraction): Promise<void>  {
         //TODO: permissions

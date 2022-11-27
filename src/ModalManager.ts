@@ -3,7 +3,7 @@ import { DiscordBot } from "./DiscordBot";
 import BotClient from "./utils/BotClient";
 import { sendError } from "./utils/sendError";
 import { Modal, ModalIdType } from "./interfaces/Modal";
-import { TestModal } from "./modals/debug/testmodal";
+import { getObjects, ObjectImportType } from "./utils/getFiles";
 
 export default class ModalManager {
     public app: DiscordBot
@@ -12,7 +12,7 @@ export default class ModalManager {
     constructor(app: DiscordBot) {
         this.app = app
         this.client = app.client
-        this.modals = [TestModal]
+        this.modals = getObjects(ObjectImportType.Modal) as Modal[]
     }
     public async handleModal(interaction: ModalSubmitInteraction): Promise<void>  {
         //TODO: permissions

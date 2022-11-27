@@ -1,7 +1,7 @@
 import { ButtonStyle, ComponentType } from "discord.js";
 import { Command, CommandType } from "../../interfaces/Command";
 
-export const SendBtn: Command = {
+const SendBtn: Command = {
     botOwnerOnly: true,
     name: "sendbtn",
     description: "Sends the buttons",
@@ -37,3 +37,5 @@ export const SendBtn: Command = {
         }
     }
 };
+
+export default SendBtn

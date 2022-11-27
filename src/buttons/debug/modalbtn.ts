@@ -2,7 +2,7 @@ import { ActionRowBuilder, ModalBuilder, TextInputBuilder } from "@discordjs/bui
 import { TextInputStyle } from "discord.js";
 import { Button, ButtonIdType } from "../../interfaces/Button";
 
-export const ModalBtn: Button = {
+const ModalBtn: Button = {
     botOwnerOnly: true,
     customId: "modalbtn",
     type: ButtonIdType.Fixed,
@@ -25,3 +25,4 @@ export const ModalBtn: Button = {
         }
     }
 };
+export default ModalBtn

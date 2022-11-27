@@ -1,6 +1,6 @@
 import { Button, ButtonIdType } from "../../interfaces/Button";
 
-export const ReturnBtn: Button = {
+const ReturnBtn: Button = {
     botOwnerOnly: true,
     customId: "return",
     type: ButtonIdType.Prefixed,
@@ -12,3 +12,4 @@ export const ReturnBtn: Button = {
         }
     }
 };
+export default ReturnBtn

@@ -1,7 +1,7 @@
 import { ApplicationCommandType } from "discord.js";
 import { Command, CommandType } from "../../interfaces/Command";
 
-export const Ping: Command = {
+const Ping: Command = {
     botOwnerOnly: true,
     name: "ping",
     description: "Returns the bot's ping",
@@ -30,3 +30,4 @@ export const Ping: Command = {
         }
     }
 };
+export default Ping

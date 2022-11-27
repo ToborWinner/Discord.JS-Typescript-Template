@@ -3,9 +3,7 @@ import { DiscordBot } from "./DiscordBot";
 import BotClient from "./utils/BotClient";
 import { sendError } from "./utils/sendError";
 import { Button, ButtonIdType } from "./interfaces/Button";
-import { PingBtn } from "./buttons/debug/pingbtn";
-import { ReturnBtn } from "./buttons/debug/returnmsg";
-import { ModalBtn } from "./buttons/debug/modalbtn";
+import { getObjects, ObjectImportType } from "./utils/getFiles";
 
 export default class ButtonManager {
     public app: DiscordBot
@@ -14,7 +12,7 @@ export default class ButtonManager {
     constructor(app: DiscordBot) {
         this.app = app
         this.client = app.client
-        this.buttons = [PingBtn, ReturnBtn, ModalBtn]
+        this.buttons = getObjects(ObjectImportType.Button) as Button[]
     }
     public async handleButton(interaction: ButtonInteraction): Promise<void>  {
         //TODO: permissions
