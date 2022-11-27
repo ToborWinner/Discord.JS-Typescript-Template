@@ -20,18 +20,18 @@ git clone https://github.com/ToborWinner/Discord.JS-Typescript-Template.git
 ```
 npm install
 ```
-**Step 3:** Open the folder in your favorite code editor.
-**Step 4:** Create a file name .env
-**Step 5:** Insert the following values in the .env file:
+**Step 3:** Create a file named .env with the following content:
 ```
 DISC_TOKEN=Insert here your bot's token
 BOT_OWNER=Optional value, you can insert the id of the owner of the bot
 MONGO_URI=The connection string for your mongodb database
 ```
-**Step 6:** If you are in vscode, press SHIFT+CTRL (or CMD on mac)+B and select tsc build. If you want to do it from terminal just run `tsc build` in the main project folder. This should create a dist folder, which contains the javascript code ready to run for production.
-**Step 7:** Start the bot.
+**Step 4:** If you are in vscode, press SHIFT+CTRL (or CMD on mac)+B and select tsc build. If you want to do it from terminal just run `tsc build` in the main project folder. This should create a dist folder, which contains the javascript code ready to run for production.
+**Step 5:** Start the bot.
 ```
 npm start
 ```
+
+Happy coding!
 
 ## More info about how to use the handlers coming soon. As I mentioned above, this project is still in developement and not ready for everyone to use yet.
