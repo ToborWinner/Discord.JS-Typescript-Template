@@ -26,7 +26,10 @@ DISC_TOKEN=Insert here your bot's token
 BOT_OWNER=Optional value, you can insert the id of the owner of the bot
 MONGO_URI=The connection string for your mongodb database
 ```
-**Step 4:** If you are in vscode, press SHIFT+CTRL (or CMD on mac)+B and select tsc build. If you want to do it from terminal just run `tsc build` in the main project folder. This should create a dist folder, which contains the javascript code ready to run for production.
+**Step 4:** If you are in vscode, press SHIFT+CTRL (or CMD on mac)+B and select tsc build. If you want to do it from terminal just run the command below in the main project folder. This should create a dist folder, which contains the javascript code ready to run for production.
+```
+tsc build
+```
 **Step 5:** Start the bot.
 ```
 npm start
