@@ -1,5 +1,6 @@
 import Cluster from "discord-hybrid-sharding";
 import { EmbedFooterOptions, GatewayIntentBits, Partials } from "discord.js";
+import mongoose from "mongoose";
 import ButtonManager from "./ButtonManager";
 import CommandManager from "./CommandManager";
 import interactionCreate from "./listeners/interactionCreate";
@@ -72,5 +73,17 @@ export class DiscordBot {
             process.exit(0)
         }
         this.log.info("Successefully logged in with discord.")
+    }
+    /* connect to the database */
+    public async connectToDatabase() {
+        try {
+            await mongoose.connect(process.env.MONGO_URI || "", {
+                keepAlive: true
+            })
+            this.log.info("Successefully connected to the database.")
+        } catch (e) {
+            this.log.fatal("Failed to connect to database.", e)
+            process.exit(0)
+        }
     }
 }

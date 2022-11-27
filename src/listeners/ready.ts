@@ -8,6 +8,8 @@ export default (client: BotClient): void => {
         }
         client.app.footer.iconURL = client.user?.avatarURL() || undefined
 
+        await client.app.connectToDatabase();
+
         //await client.application.commands.set(client.app.commandManager.commands);
 
         client.app.log.info(`${client.user.username}#${client.user.discriminator} (${client.user.id}) should now be online.`);
